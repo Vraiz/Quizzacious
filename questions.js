@@ -74,9 +74,20 @@ function win() {
 }
 
 function win2() {
+
+    let rand = Math.floor(Math.random()*5)
     
-    $('#win').css('background-image', 'url("' + finScreen[Math.floor(Math.random()*3)] + '")')
+    $('#win').css('background-image', 'url("' + finScreen[rand] + '")')
     $('#win').show()
+
+    if(rand == 3){
+        $('#win').show()
+        $('#win').css("background-size", "80%")
+    } else if(rand == 4){
+        $('#win').show()
+        $('#win').css("background-size", "88%")
+        $('#win').css("background-position-y", "110vh")
+    }
     $("<audio></audio>").attr({
         'src':'./Victory!.mp3',
         'volume':5,
@@ -150,7 +161,7 @@ $('#quiz2').click(function(){
     $(topUtilHOlder).show()
 
     $(Scale).hide()
-
+    
     $('#number').text("1.")
     $('#QuestionText').text(quiz2.Question[count])
     $('#oneL').text(quiz2.answer1[count])
@@ -160,12 +171,15 @@ $('#quiz2').click(function(){
     $('#progressBar').css("width", "100%")
 })
 
-/*
 $('#SharkTest').click(function(){
     document.title = "Shark Test"
 
     $(links).hide()
     $('#disclaimer').show()
+
+    health = 10
+    localStorage.setItem('health', health)
+    $('#progressBar').css("width", "10%")
 
     state = 3
     localStorage.setItem("state", state)
@@ -179,8 +193,9 @@ $('#SharkTest').click(function(){
     $(layerUP).hide()
     $(layerDown).hide()
 
+    location.reload()
+
 })
-*/
 
 
 $('#back').click(function(){
@@ -192,14 +207,18 @@ $('#back').click(function(){
 })
 
 $('#restartQuiz').click(function(){//---------------work on me later
-    count = 0
-    QuizStorage = []
-    health = 100
+    if(state == 1 || state == 2){
+        count = 0
+        QuizStorage = []
+        health = 100
+    }else if(state == 3){
+        count = 0
+        QuizStorage = []
+        health = 10
+    }
+        
 
     localStorage.setItem('health', health)
-    quiz1.SelectedAnswer.forEach(element => {
-        element = 0
-    });
     localStorage.setItem('count', count)
     location.reload()
     //paste code here
@@ -248,8 +267,6 @@ $('#oneL').click(function(){
         console.log('win')
         win()
     }
-    
-    
 })
 
 $('#twoL').click(function(){
@@ -318,12 +335,98 @@ $('#fourL').click(function(){
         console.log('win')
         win()
     }
-    location.reload()
 })
 
 //---------Scales
+$('#oneS').click(function(){
 
+    localStorage.setItem('sound', 'r')
+    health = health + 10
+    localStorage.setItem('health', health)
 
+    if(count < 5){
+        localStorage.setItem('Quiz', QuizStorage)
+        count++
+        localStorage.setItem('count', count)
+        location.reload()
+        
+    }else if(count == 5){
+        console.log('win')
+        win()
+    }
+})
+
+$('#twoS').click(function(){
+
+    localStorage.setItem('sound', 'r')
+    health = health + 10
+    localStorage.setItem('health', health)
+
+    if(count < 5){
+        localStorage.setItem('Quiz', QuizStorage)
+        count++
+        localStorage.setItem('count', count)
+        location.reload()
+        
+    }else if(count == 5){
+        console.log('win')
+        win()
+    }
+})
+
+$('#threeS').click(function(){
+
+    localStorage.setItem('sound', 'r')
+    health = health + 10
+    localStorage.setItem('health', health)
+
+    if(count < 5){
+        localStorage.setItem('Quiz', QuizStorage)
+        count++
+        localStorage.setItem('count', count)
+        location.reload()
+        
+    }else if(count == 5){
+        console.log('win')
+        win()
+    }
+})
+
+$('#fourS').click(function(){
+
+    localStorage.setItem('sound', 'r')
+    health = health + 10
+    localStorage.setItem('health', health)
+
+    if(count < 5){
+        localStorage.setItem('Quiz', QuizStorage)
+        count++
+        localStorage.setItem('count', count)
+        location.reload()
+        
+    }else if(count == 5){
+        console.log('win')
+        win()
+    }
+})
+
+$('#fiveS').click(function(){
+
+    localStorage.setItem('sound', 'r')
+    health = health + 10
+    localStorage.setItem('health', health)
+
+    if(count < 5){
+        localStorage.setItem('Quiz', QuizStorage)
+        count++
+        localStorage.setItem('count', count)
+        location.reload()
+        
+    }else if(count == 5){
+        console.log('win')
+        win()
+    }
+})
 //----------End
 
 $('#disclaimer').click(function(){
@@ -345,6 +448,7 @@ window.onload = async function() {
     $('#disclaimer').hide()
     $('#imgQuest').hide()
     $('#win').hide()
+    
 
     let steak
     if(localStorage.getItem('state') != null){
@@ -374,6 +478,7 @@ window.onload = async function() {
     } else {
         sound = 'none'
     }
+
 
     
 
@@ -511,6 +616,17 @@ window.onload = async function() {
         $(Scale).show()
         $(layerUP).hide()
         $(layerDown).hide()
+
+        $('#number').text((counter).toString() + ".")
+        $('#QuestionText').text(sharkTest.Question[count])
+        $('#oneS').text(sharkTest.answer1[count])
+        $('#twoS').text(sharkTest.answer2[count])
+        $('#threeS').text(sharkTest.answer3[count])
+        $('#fourS').text(sharkTest.answer4[count])
+        $('#fiveS').text(sharkTest.answer5[count])
+        $('#rightS').text(sharkTest.right[count])
+        $('#leftS').text(sharkTest.left[count])
+        $('#progressBar').css("width", percentage)//
     }
     $('#loader').hide()
 
