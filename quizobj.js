@@ -1,4 +1,4 @@
-const finScreen = ['Scary1.png', 'Scary2.png', 'Scary5.gif']
+const finScreen = ['Scary1.png', 'Scary4.gif', 'Scary5.gif', 'Scary6.jpg', 'Scary7.jpg']
 
 const quiz1 = {
     Question: ['What is a human' ,'How many holes does an average human have', 'Most famousest game ever!?', 'Which one here is not a mountain?', 'TELL ME WHYYY','What is quizzacious'],
