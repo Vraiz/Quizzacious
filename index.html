@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Practice mini challenge">
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="Trogdor.png" type="image/x-icon">
+        <title>WebTest</title>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+        </script>
+        
+    </head>
+    <body>
+        <div id="loader"></div>
+        <div id="disclaimer">This website is not finished and is just for fun <br> Please do not react violently ;)</div>
+        <div id="win"></div>
+        <div class="main">
+
+           
+
+            <div id="topBar">
+
+                <div id="logo"><img src="Logo.png" alt="Vsauce" id="logoIMG"> <p id="logoText">Quizzacious</p></div>
+
+                <div id="utilHolder">
+                    <div id="restartQuiz" class="utilButton">Restart</div>
+                    <div id="back" class="utilButton">Back</div>
+                </div>
+
+            </div>
+            
+            <div class="QuestionDiv">
+
+                <div id="imgQuest"></div>
+
+                <div id="quizLinkHolder">
+                    <div class="quizLink done" id="quiz1">Illogical Quiz</div>
+                    <div class="quizLink done" id="quiz2">Illogical Quiz: 2</div>
+                    <div class="quizLink done" id="SharkTest"> {Opening soon WIP} What kind of Shark are you? </div>
+                    <div class="quizLink wip" id="quiz3"> {Opening soon WIP} what Kind of mineral are you? </div>
+                    <div class="quizLink wip" id="quiz4"> {closed WIP} what Kind of Filipino food are you?</div>
+                    <div class="quizLink wip" id="quiz5"> {closed WIP} who are you in your frieng group</div>
+                    <div class="quizLink wip" id="quiz6"> {closed WIP} are you the left or the right toe? </div>
+                </div>
+                
+
+                <div id="QuestionHolder">
+                    <h2 id="number"></h2>
+                    <p id="QuestionText"></p>
+                </div>
+
+                <div id="AnswerHolder">
+                    
+                    <div id="scale">
+                        <p class="scaleText"></p>
+                        <div class="option" id="oneS"><p class="AnswerText">5</p></div>
+                        <div class="option" id="twoS"><p class="AnswerText">4</p></div>
+                        <div class="option" id="threeS"><p class="AnswerText">3</p></div>
+                        <div class="option" id="fourS"><p class="AnswerText">2</p></div>
+                        <div class="option" id="fiveS"><p class="AnswerText">1</p></div>
+                        <p class="scaleText"></p>
+                    </div>
+                    
+                    <div class="layer up" id="layerUP">
+                        <div class="lOption" id="oneL"><p class="AnswerText"></p></div>
+                        <div class="lOption" id="twoL"><p class="AnswerText"></p></div>
+                    </div>
+                    <div class="layer down" id="layerDown">
+                        <div class="lOption" id="threeL"><p class="AnswerText"></p></div>
+                        <div class="lOption" id="fourL"><p class="AnswerText"></p></div>
+                    </div>
+                    
+                </div>
+
+                <div id="progress">
+                    <div id="progressBar"><p id="progressText">Life</p></div>
+                </div>
+
+            </div>
+            
+
+            <div id="bottomHolder">
+
+                <div class="bottomButton" id="prevButton">Prev</div>
+                <div class="bottomButton" id="nextButton">Next</div>
+            </div>
+
+        </div>
+        
+        <script src="questions.js" type="module"></script>
+    </body>
+    
+</html>
+
